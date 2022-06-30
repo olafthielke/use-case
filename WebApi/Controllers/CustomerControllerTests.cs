@@ -73,8 +73,8 @@ namespace WebApi.Controllers
         private static readonly CustomerRegistration RegoAdamAnt = new CustomerRegistration("Adam", "Ant", "adam@ant.co.uk");
         private static readonly CustomerRegistration RegoBobSmith = new CustomerRegistration("Bob", "Smith", "bob@smith.com");
 
-        private static readonly Customer CustomerAdamAnt = new Customer("Adam", "Ant", "adam@ant.co.uk");
-        private static readonly Customer CustomerBobSmith = new Customer("Bob", "Smith", "bob@smith.com");
+        private static readonly Customer CustomerAdamAnt = new Customer(Guid.NewGuid(), "Adam", "Ant", "adam@ant.co.uk");
+        private static readonly Customer CustomerBobSmith = new Customer(Guid.NewGuid(), "Bob", "Smith", "bob@smith.com");
 
         public static IEnumerable<object[]> GetApiRegistrationsAndRegistrations()
         {

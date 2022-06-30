@@ -1,12 +1,13 @@
-﻿using BusinessLogic.Exceptions;
+﻿using System;
+using BusinessLogic.Exceptions;
 
 namespace BusinessLogic.Entities
 {
     public class CustomerRegistration
     {
-        public string FirstName { get; private set; }
-        public string LastName { get; private set; }
-        public string EmailAddress { get; private set; }
+        public string FirstName { get; }
+        public string LastName { get; }
+        public string EmailAddress { get; }
 
         public CustomerRegistration(string firstName, string lastName, string emailAddress)
         {
@@ -27,7 +28,7 @@ namespace BusinessLogic.Entities
 
         public Customer ToCustomer()
         {
-            return new Customer(FirstName, LastName, EmailAddress);
+            return new Customer(Guid.NewGuid(), FirstName, LastName, EmailAddress);
         }
     }
 }
